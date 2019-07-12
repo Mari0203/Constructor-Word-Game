@@ -1,6 +1,6 @@
-function Letter(char){
-    this.character = char,
-    this.guessed = false;
+function Letter(char, guessed){
+    this.character = char;
+    this.guessed = guessed = false;
     this.usedLetter = function() {
         if (this.guessed === true) {
             return this.character
@@ -11,9 +11,8 @@ function Letter(char){
     this.checkMatch = function(userLetterInput) {
         if (userLetterInput === this.character) {
             this.guessed = true;
-            return true;
-        } else {
-            return false;
-        }
+        } 
     };
 };
+
+module.exports = Letter;
